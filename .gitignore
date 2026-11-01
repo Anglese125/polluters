@@ -1,3 +1,10 @@
-# Godot 4+ specific ignores
+# Godot cache
 .godot/
-/android/
+
+# Exported builds
+/export.cfg
+/export_presets.cfg
+
+# Temporary files
+*.tmp
+*.log
