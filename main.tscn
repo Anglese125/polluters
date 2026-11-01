@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://31xhungcl86l"]
+
+[ext_resource type="Script" uid="uid://dn5fiibwavmt5" path="res://node_2d.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://d3c47mx52h4bj" path="res://player.gd" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://cd08mbedf2oe5" path="res://assests/harita_son.jpg" id="2_lquwl"]
+[ext_resource type="Texture2D" uid="uid://0i2nvuxi8qce" path="res://assests/playernew_front.png" id="4_82xsv"]
+[ext_resource type="Texture2D" uid="uid://buni0wiwgid4t" path="res://assests/playernew_back.png" id="5_getpj"]
+[ext_resource type="PackedScene" uid="uid://l7w1pr3qrck4" path="res://machine.tscn" id="6_074og"]
+[ext_resource type="Texture2D" uid="uid://bxgdku10tg7ro" path="res://assests/playerneww_left.png" id="6_ryguw"]
+[ext_resource type="Texture2D" uid="uid://c1pu2ow0k6gae" path="res://assests/atık_bozuk2.png" id="6_yaehf"]
+[ext_resource type="Texture2D" uid="uid://dqj5etrbs3vj2" path="res://assests/playernew_right.png" id="7_d13ii"]
+[ext_resource type="Texture2D" uid="uid://bwloa5tucwyum" path="res://assests/atık_dur.png" id="8_82xsv"]
+[ext_resource type="Texture2D" uid="uid://4n1h0d0qxuri" path="res://assests/atık_tamir.png" id="9_getpj"]
+[ext_resource type="Texture2D" uid="uid://nvyrx64of24v" path="res://assests/hava_bozuk.png" id="10_ryguw"]
+[ext_resource type="Texture2D" uid="uid://cc7keoepm4qpm" path="res://assests/hava_dur.png" id="10_yaehf"]
+[ext_resource type="Texture2D" uid="uid://brlmc4j8ks6c8" path="res://assests/hava_tamir.png" id="12_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://dpgw8myx6127j" path="res://assests/drone_bozuk.png" id="13_0odxb"]
+[ext_resource type="Texture2D" uid="uid://cqcnjv8odcadi" path="res://assests/drone_dur.png" id="14_lswn8"]
+[ext_resource type="Texture2D" uid="uid://cgrmx2rml6dxf" path="res://assests/drone_tamir.png" id="15_a6jrf"]
+[ext_resource type="Texture2D" uid="uid://dbycb24t63ybl" path="res://assests/su_bozuk.png" id="16_xuqvo"]
+[ext_resource type="Texture2D" uid="uid://de1o44ukkc7kc" path="res://assests/su_dur.png" id="17_qsp4k"]
+[ext_resource type="Texture2D" uid="uid://swd5vof2g5a4" path="res://assests/su_tamir.png" id="18_kq58d"]
+[ext_resource type="AudioStream" uid="uid://c3iebinj22o5w" path="res://audio/air_audio_w.wav" id="21_qsp4k"]
+[ext_resource type="AudioStream" uid="uid://bc8lc3mnqj1rx" path="res://audio/drone_audio_w.wav" id="22_kq58d"]
+[ext_resource type="AudioStream" uid="uid://cj61dfy4vai0d" path="res://audio/fixed_audio_w.wav" id="23_seu75"]
+[ext_resource type="AudioStream" uid="uid://djv6ypq1eys2e" path="res://audio/player_audio_w.wav" id="24_htxhm"]
+[ext_resource type="AudioStream" uid="uid://dgx2y0qp52haf" path="res://audio/scan_audio_w.wav" id="25_jq2sk"]
+[ext_resource type="AudioStream" uid="uid://ukmpwv4gioqs" path="res://audio/stabilize_audio_w.wav" id="26_4k2k6"]
+[ext_resource type="AudioStream" uid="uid://dkoxxwvaaoscx" path="res://audio/tamir_audio_w.wav" id="27_0rl1p"]
+[ext_resource type="AudioStream" uid="uid://ddwxb1l4tstel" path="res://audio/waste_audio_w.wav" id="28_ok6jj"]
+[ext_resource type="AudioStream" uid="uid://kv7l8vbx25ge" path="res://audio/water_audio_w.wav" id="29_facbu"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1u8w0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6bgyl"]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14cdr"]
+size = Vector2(1000, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4lci"]
+size = Vector2(1000, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pj0hq"]
+size = Vector2(20, 800)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugcl7"]
+size = Vector2(20, 800)
+
+[node name="Main" type="Node2D" unique_id=493687973]
+script = ExtResource("1_h2yge")
+
+[node name="World" type="Node2D" parent="." unique_id=610003910]
+
+[node name="Ground" type="Sprite2D" parent="World" unique_id=251748825]
+position = Vector2(700, 300)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_lquwl")
+
+[node name="Player" type="CharacterBody2D" parent="World" unique_id=2060256355]
+position = Vector2(700, 400)
+script = ExtResource("2_1bvp3")
+front_texture = ExtResource("4_82xsv")
+back_texture = ExtResource("5_getpj")
+left_texture = ExtResource("6_ryguw")
+right_texture = ExtResource("7_d13ii")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/Player" unique_id=1068891196]
+scale = Vector2(0.2, 0.2)
+texture = SubResource("CompressedTexture2D_1u8w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Player" unique_id=1418721551]
+shape = SubResource("CircleShape2D_6bgyl")
+
+[node name="Machines" type="Node2D" parent="World" unique_id=1451870459]
+
+[node name="WasteMachine" parent="World/Machines" unique_id=740600770 instance=ExtResource("6_074og")]
+position = Vector2(430, 100)
+machine_name = "WasteMachine"
+broken_texture = ExtResource("6_yaehf")
+stabilized_texture = ExtResource("8_82xsv")
+repaired_texture = ExtResource("9_getpj")
+machine_sound = ExtResource("28_ok6jj")
+
+[node name="AirMachine" parent="World/Machines" unique_id=1803014835 instance=ExtResource("6_074og")]
+position = Vector2(1000, 100)
+machine_name = "AirMachine"
+broken_texture = ExtResource("10_ryguw")
+stabilized_texture = ExtResource("10_yaehf")
+repaired_texture = ExtResource("12_1u8w0")
+machine_sound = ExtResource("21_qsp4k")
+
+[node name="PlasticMachine" parent="World/Machines" unique_id=954253274 instance=ExtResource("6_074og")]
+position = Vector2(400, 500)
+machine_name = "PlasticMachine"
+broken_texture = ExtResource("13_0odxb")
+stabilized_texture = ExtResource("14_lswn8")
+repaired_texture = ExtResource("15_a6jrf")
+machine_sound = ExtResource("22_kq58d")
+
+[node name="WaterMachine" parent="World/Machines" unique_id=1790002438 instance=ExtResource("6_074og")]
+position = Vector2(1050, 400)
+machine_name = "WaterMachine"
+broken_texture = ExtResource("16_xuqvo")
+stabilized_texture = ExtResource("17_qsp4k")
+repaired_texture = ExtResource("18_kq58d")
+machine_sound = ExtResource("29_facbu")
+
+[node name="MapBoundaries" type="StaticBody2D" parent="World" unique_id=1567444854]
+
+[node name="Top" type="CollisionShape2D" parent="World/MapBoundaries" unique_id=543201882]
+position = Vector2(700, 0)
+shape = SubResource("RectangleShape2D_14cdr")
+
+[node name="Bottom" type="CollisionShape2D" parent="World/MapBoundaries" unique_id=74547283]
+position = Vector2(700, 650)
+shape = SubResource("RectangleShape2D_q4lci")
+
+[node name="Left" type="CollisionShape2D" parent="World/MapBoundaries" unique_id=535069241]
+position = Vector2(250, 400)
+shape = SubResource("RectangleShape2D_pj0hq")
+
+[node name="Right" type="CollisionShape2D" parent="World/MapBoundaries" unique_id=1938140917]
+position = Vector2(1150, 400)
+shape = SubResource("RectangleShape2D_ugcl7")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2123479426]
+
+[node name="HUD" type="Control" parent="UI" unique_id=847796545]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Audio" type="Control" parent="." unique_id=1105399666]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Air_audio" type="AudioStreamPlayer" parent="Audio" unique_id=1031090442]
+stream = ExtResource("21_qsp4k")
+
+[node name="Drone_audio" type="AudioStreamPlayer" parent="Audio" unique_id=511210287]
+stream = ExtResource("22_kq58d")
+
+[node name="Fixed_audio" type="AudioStreamPlayer" parent="Audio" unique_id=1713970023]
+stream = ExtResource("23_seu75")
+
+[node name="Player_audio" type="AudioStreamPlayer" parent="Audio" unique_id=743026276]
+stream = ExtResource("24_htxhm")
+
+[node name="Scan_audio" type="AudioStreamPlayer" parent="Audio" unique_id=1531175974]
+stream = ExtResource("25_jq2sk")
+
+[node name="Stabilize_audio" type="AudioStreamPlayer" parent="Audio" unique_id=1520485964]
+stream = ExtResource("26_4k2k6")
+
+[node name="Fix_audio" type="AudioStreamPlayer" parent="Audio" unique_id=1008041310]
+stream = ExtResource("27_0rl1p")
+
+[node name="Waste_audio" type="AudioStreamPlayer" parent="Audio" unique_id=1158708463]
+stream = ExtResource("28_ok6jj")
+
+[node name="Water_audio" type="AudioStreamPlayer" parent="Audio" unique_id=1650787099]
+stream = ExtResource("29_facbu")

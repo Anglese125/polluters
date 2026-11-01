@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bohoymi24l4nt"]
+
+[ext_resource type="Script" uid="uid://slwlma04xypd" path="res://menu_screen.gd" id="1_tuusc"]
+
+[node name="MenuScreen" type="Control" unique_id=699038261]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuScreen" type="Control" parent="." unique_id=1214758593]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tuusc")

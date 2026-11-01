@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://l7w1pr3qrck4"]
+
+[ext_resource type="Script" uid="uid://b6kkc21bhox2p" path="res://machine.gd" id="1_6a4ke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ybn8"]
+size = Vector2(180, 150)
+
+[node name="Machine" type="Node2D" unique_id=740600770]
+script = ExtResource("1_6a4ke")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1634508967]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1955153132]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=21217366]
+shape = SubResource("RectangleShape2D_6ybn8")
+
+[node name="MachineSound" type="AudioStreamPlayer2D" parent="." unique_id=690169555]
+autoplay = true
+max_distance = 500.0

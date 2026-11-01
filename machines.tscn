@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bo7r8us34tp5y"]
+
+[ext_resource type="Script" uid="uid://di563jtwu7vs0" path="res://machines.gd" id="1_ndd71"]
+[ext_resource type="PackedScene" uid="uid://31xhungcl86l" path="res://main.tscn" id="1_rwqok"]
+[ext_resource type="Texture2D" uid="uid://6wrc5pn0xkf3" path="res://assests/atık_bozuk.png" id="3_6ybn8"]
+[ext_resource type="Texture2D" uid="uid://lfwrwa1yplr4" path="res://assests/atık_dur.png" id="4_124t8"]
+[ext_resource type="Texture2D" uid="uid://caayk1mxkv231" path="res://assests/atık_tamir.png" id="5_i0v0d"]
+[ext_resource type="Texture2D" uid="uid://6pl6tbqvsqcu" path="res://assests/hava_bozuk.png" id="6_8wim1"]
+[ext_resource type="Texture2D" uid="uid://dnqsb0ax2xlki" path="res://assests/hava_dur.png" id="7_snj4c"]
+[ext_resource type="Texture2D" uid="uid://ca143mic33f5u" path="res://assests/hava_tamir.png" id="8_8lp3v"]
+[ext_resource type="Texture2D" uid="uid://d2xdwwqdmxlba" path="res://assests/drone_bozuk.png" id="9_8j7l6"]
+[ext_resource type="Texture2D" uid="uid://b3enx02kevh41" path="res://assests/drone_dur.png" id="10_gmw1k"]
+[ext_resource type="Texture2D" uid="uid://c4ucxwpsg0db8" path="res://assests/drone_tamir.png" id="11_3s333"]
+[ext_resource type="Texture2D" uid="uid://dyn31awy7dnxi" path="res://assests/su_bozuk.png" id="12_sbx2e"]
+[ext_resource type="Texture2D" uid="uid://b4l58slefct8i" path="res://assests/su_dur.png" id="13_jxuvs"]
+[ext_resource type="Texture2D" uid="uid://b852773fpdomp" path="res://assests/su_tamir.png" id="14_51ach"]
+
+[node name="Machine" type="Node2D" unique_id=1517228313]
+script = ExtResource("1_ndd71")
+
+[node name="WasteMachine" parent="." unique_id=493687973 instance=ExtResource("1_rwqok")]
+position = Vector2(250, 200)
+script = ExtResource("1_ndd71")
+machine_name = "WasteMachine"
+broken_texture = ExtResource("3_6ybn8")
+stabilized_texture = ExtResource("4_124t8")
+repaired_texture = ExtResource("5_i0v0d")
+
+[node name="AirMachine" parent="." unique_id=187346453 instance=ExtResource("1_rwqok")]
+position = Vector2(750, 200)
+script = ExtResource("1_ndd71")
+machine_name = "AirMachine"
+broken_texture = ExtResource("6_8wim1")
+stabilized_texture = ExtResource("7_snj4c")
+repaired_texture = ExtResource("8_8lp3v")
+
+[node name="PlasticMachine" parent="." unique_id=179943559 instance=ExtResource("1_rwqok")]
+position = Vector2(250, 600)
+script = ExtResource("1_ndd71")
+machine_name = "PlasticMachine"
+broken_texture = ExtResource("9_8j7l6")
+stabilized_texture = ExtResource("10_gmw1k")
+repaired_texture = ExtResource("11_3s333")
+
+[node name="WaterMachine" parent="." unique_id=965262833 instance=ExtResource("1_rwqok")]
+position = Vector2(750, 600)
+script = ExtResource("1_ndd71")
+machine_name = "WaterMachine"
+broken_texture = ExtResource("12_sbx2e")
+stabilized_texture = ExtResource("13_jxuvs")
+repaired_texture = ExtResource("14_51ach")
